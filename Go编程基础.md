@@ -10,13 +10,15 @@ Go的主要特点：
     * UTF-8编码支持。
 
 * Go常用命令
-    * go get：获取远程包（需提前安装git或其他代码管理工具）；
-    * go run：直接运行程序；
-    * go build：测试编译，检查是否有编译错误；
-    * go fmt：格式化源码；
-    * go install：编译包文件并编译整个程序；
-    * go test：运行测试文件；
-    * go doc：查看文档。
+    ```
+    go get：获取远程包（需提前安装git或其他代码管理工具）；
+    go run：直接运行程序；
+    go build：测试编译，检查是否有编译错误；
+    go fmt：格式化源码；
+    go install：编译包文件并编译整个程序；
+    go test：运行测试文件；
+    go doc：查看文档。
+    ```
 
 * 先写个hello.go吧！
     ```
@@ -55,5 +57,38 @@ Go的主要特点：
     通过const关键字来进行常量的定义；
     通过在函数体外部使用var关键字来进行全局变量的声明与赋值；
     通过type关键字来进行结构(struct)或接口(interface)的声明；
-    通过func关键字来进行函数的声明。
+    通过func关键字来进行函数的声明；
+    如果导入一个包但是没有用会出现未使用包的异常。
+    举个例子，编辑print.go：
+    // 当前程序的包名
+    package main
+
+    // 导入其它的包
+    import (
+    	"fmt"
+    )
+
+    // 定义常量
+    const PI = 3.14
+
+    // 全局变量的声明和赋值
+    var name = "gopher"
+
+    // 一般类似声明
+    type newType int
+
+    // 结构的声明
+    type gopher struct{}
+
+    // 接口的声明
+    type golang interface{}
+
+    // 由main函数作为程序的入口
+    func main() {
+    	fmt.Println("Hello,World!")
+    }
+
+    # 使用别名
+    import std "fmt"
+    这样可以使用std.Println
     ```
