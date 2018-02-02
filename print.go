@@ -3,7 +3,7 @@ package main
 
 // 导入其它的包
 import (
-	"fmt"
+	std "fmt"
 )
 
 // 定义常量
@@ -23,5 +23,5 @@ type golang interface{}
 
 // 由main函数作为程序的入口
 func main() {
-	fmt.Println("Hello,World!")
+	std.Println("Hello,World!")
 }
